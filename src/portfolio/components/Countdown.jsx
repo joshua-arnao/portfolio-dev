@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set } from 'firebase/database';
 // import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAWoe_ckJ2DcHEU7iQndqYDtfuW_oQCv1U',
-  authDomain: 'portfolio-5f4c5.firebaseapp.com',
-  projectId: 'portfolio-5f4c5',
-  storageBucket: 'portfolio-5f4c5.appspot.com',
-  messagingSenderId: '732572367080',
-  appId: '1:732572367080:web:999cb624beee1493f5b15d',
-  measurementId: 'G-D96LN22YS9'
+  apiKey: import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env
+    .VITE_REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_REACT_APP_FIREBASE_APP_ID
 };
 
 export const Countdown = () => {
@@ -32,9 +34,9 @@ export const Countdown = () => {
         } else {
           console.log('No hay datos de contador en Firebase');
           // // Si no hay datos en Firebase, establece un contador predeterminado
-          // setCountdown({ days: 253, hours: 0, minutes: 55 });
+          // setCountdown({ days: 253, hours: 0, minutes: 50 });
           // // Y guarda el contador en Firebase
-          // set(countdownRef, { days: 253, hours: 0, minutes: 55 });
+          // set(countdownRef, { days: 253, hours: 0, minutes: 50 });
         }
       } catch (error) {
         console.error('Error al recuperar el contador:', error);
