@@ -59,8 +59,8 @@ const projects = [
         'Iteración del diseño y pruebas de usabilidad.'
       ],
       images: [
-        '/../../public/assets/photos/imagePortfolio.png',
-        '/../public/assets/photos/imagePortfolio.png'
+        '/assets/photos/imagePortfolio.png',
+        '/assets/photos/imagePortfolio.png'
       ]
     },
     overall: {
@@ -70,7 +70,7 @@ const projects = [
         'Página de revisión de reserva, zonas adicionales y formulario de reserva rediseñadas (aumento del 19,8%).',
         'Disminución de quejas y consultas en un 5%.'
       ],
-      images: ['../../../public/assets/photos/imagePortfolio.png']
+      images: ['/assets/photos/imagePortfolio.png']
     },
     conclusions: {
       description: '',
@@ -87,7 +87,7 @@ const projects = [
     title: 'Mobile App Redisgn 2| App',
     description:
       'Redesigning tiket.coms Car Rentals mobile app due to high inquiries regarding the product & service',
-    imgCard: '../../../public/img/ImgProjects.png',
+    imgCard: '/assets/img/ImgProjects.png',
     tools: ['React', 'Node.js']
   }
 ];

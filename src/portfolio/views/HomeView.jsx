@@ -58,7 +58,7 @@ export const HomeView = () => {
       <Box display='flex' flexDirection='column' alignItems='center' gap='16px'>
         <Avatar
           alt='Joshua Arnao Canessa'
-          src='/public/assets/photos/joshua-arnao.png'
+          src='/assets/photos/joshua-arnao.png'
           sx={{ width: 176, height: 176 }}
           style={{ border: '4px solid' }}
         />

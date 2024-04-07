@@ -55,7 +55,7 @@ export const NavBar = () => {
           >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Avatar
-                src='/public/assets/photos/logojac.png'
+                src='/assets/photos/logojac.png'
                 sx={{ width: 24, height: 24 }}
               />
               <Typography variant='h1' component='div'>
