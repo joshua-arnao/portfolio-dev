@@ -24,7 +24,8 @@ export const darkTheme = createTheme({
     }
   },
 
-  //! add style for mobile
+  //! add style for mobile and tablet
+  //! add light style
   palette: {
     primary: {
       main: '#252525'
