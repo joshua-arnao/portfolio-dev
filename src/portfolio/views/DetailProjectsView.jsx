@@ -226,7 +226,7 @@ export const DetailProjectsView = () => {
       </Box>
 
       <Box width='100%' display='flex' flexDirection='column' gap='16px'>
-        <img src='../../../public/assets/photos/imagePortfolio.png' />
+        <img src='/assets/photos/imagePortfolio.png' />
       </Box>
 
       <Box width='100%' display='flex' flexDirection='column' gap='16px'>
