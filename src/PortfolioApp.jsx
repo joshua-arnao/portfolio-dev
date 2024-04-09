@@ -1,10 +1,12 @@
-import { Box } from '@mui/material'
-import { AppTheme } from './theme'
-import { PortfolioRoutes } from './portfolio/routes/PortfolioRoutes'
+import CssBaseline from '@mui/material/CssBaseline';
+import { Box } from '@mui/material';
+import { AppTheme } from './theme';
+import { PortfolioRoutes } from './portfolio/routes/PortfolioRoutes';
 
 export const PortfolioApp = () => {
   return (
     <AppTheme>
+      <CssBaseline />
       <Box
         sx={{
           minHeight: '100vh',
@@ -15,5 +17,5 @@ export const PortfolioApp = () => {
         <PortfolioRoutes />
       </Box>
     </AppTheme>
-  )
-}
+  );
+};
