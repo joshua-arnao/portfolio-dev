@@ -3,7 +3,8 @@ import Typography from '@mui/material/Typography';
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set } from 'firebase/database';
-// import { getAnalytics } from 'firebase/analytics';
+import { Container } from '@mui/material';
+import { useIsSmallScreen } from '/src/hook/useSmallScreen';
 
 const apiKey = import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY;
 const authDomain = import.meta.env.VITE_REACT_APP_FIREBASE_AUTH_DOMAIN;
@@ -27,7 +28,7 @@ const firebaseConfig = {
 };
 
 export const Countdown = () => {
-  console.log();
+  const isSmallScreen = useIsSmallScreen();
   const [countdown, setCountdown] = useState(null);
 
   useEffect(() => {
@@ -92,26 +93,25 @@ export const Countdown = () => {
   }, [countdown]);
 
   return (
-    <div
+    <Container
       style={{
         backdropFilter: 'blur(10px)',
         backgroundColor: 'rgba(255, 255, 255, 0.16)',
-        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '12px 32px',
+        padding: isSmallScreen ? '8px 16px' : '12px 32px',
         borderRadius: '8px'
       }}
     >
       {countdown ? (
-        <Typography variant='body1'>
+        <Typography variant='body1' textAlign='center'>
           {countdown.days}d:{countdown.hours}h:{countdown.minutes}m y 8 cursos
           para graduarme como Ing. Industrial
         </Typography>
       ) : (
         <Typography variant='body1'>Cargando datos...</Typography>
       )}
-    </div>
+    </Container>
   );
 };

@@ -15,6 +15,12 @@ export const darkTheme = createTheme({
       fontWeight: 700, // Cambiar el peso de los subtítulos h1
       lineHeight: 1.25
     },
+    h3: {
+      fontSize: '24px', // Cambiar el tamaño de los subtítulos h1
+      fontFamily: 'Nunito, sans-serif', // Cambiar la fuente
+      fontWeight: 700, // Cambiar el peso de los subtítulos h1
+      lineHeight: 1.25
+    },
     subtitle1: {
       fontSize: '12px', // Cambiar el tamaño de los subtítulos h1
       fontWeight: 500, // Cambiar el peso de los subtítulos h1

@@ -1,4 +1,12 @@
-import { Avatar, Box, Chip, Container, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Chip,
+  Container,
+  Stack,
+  Typography,
+  Link
+} from '@mui/material';
 import { Timeline } from '@mui/lab';
 import { timelineItemClasses } from '@mui/lab/TimelineItem';
 import { Countdown, MyTimeLine } from '../components/index';
@@ -7,7 +15,6 @@ import PlaceIcon from '@mui/icons-material/Place';
 import CakeIcon from '@mui/icons-material/Cake';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const skills = [
   'Product Designer',
@@ -48,7 +55,6 @@ export const HomeView = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '533px',
         border: '1px solid',
         padding: '24px',
         borderRadius: '20px',
@@ -68,15 +74,22 @@ export const HomeView = () => {
           flexDirection='column'
           alignItems='center'
           gap='8px'
+          style={{ width: '100%' }}
         >
-          <Typography variant='h2' component='div'>
+          <Typography variant='h2' component='div' textAlign='center'>
             Joshua Arnao Canessa
           </Typography>
-          <Typography component='div' style={{ textAlign: 'justify' }}>
+          <Typography component='div' textAlign='justify'>
             Diseñador de productos digitales con experiencia en metodología
             Agile, design thinking y CPS.{' '}
           </Typography>
-          <Stack direction='row' justifyContent='flex-start' spacing={0.5}>
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            spacing={0.5}
+            flexWrap='wrap'
+            gap='8px'
+          >
             <Chip
               icon={<PlaceIcon />}
               label='Lima, Perú'
@@ -99,11 +112,11 @@ export const HomeView = () => {
       </Box>
 
       <Box width='100%' display='flex' flexDirection='column' gap='16px'>
-        <Typography variant='subtitle1' component='div' width='100%'>
+        <Typography variant='subtitle1' component='div'>
           About
         </Typography>
 
-        <Typography component='div' style={{ textAlign: 'justify' }}>
+        <Typography component='div' textAlign='justify'>
           Soy un apasionado Diseñador de Productos Digitales con un deseo
           constante de innovar y mejorar. Siempre estoy buscando nuevas formas
           de combinar la creatividad, la eficiencia y la mejora en la
@@ -159,8 +172,13 @@ export const HomeView = () => {
         </Typography>
 
         <Stack direction='row' spacing={1}>
-          <LinkedInIcon />
-          <GitHubIcon />
+          <Link
+            href='https://pe.linkedin.com/in/joshua-arnao-canessa-832090213'
+            target='_blank'
+            rel='noopener'
+          >
+            <LinkedInIcon color={'secondary'} />
+          </Link>
         </Stack>
       </Box>
     </Container>

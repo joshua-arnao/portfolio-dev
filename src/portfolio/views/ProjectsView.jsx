@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { CardProject } from '../components/CardProject';
 import { Link } from 'react-router-dom';
+import { useIsSmallScreen } from '/src/hook/useSmallScreen';
 
 const projects = [
   {
@@ -12,17 +13,23 @@ const projects = [
     tools: ['React', 'Node.js', 'Notion']
   }
 ];
+
 export const ProjectsView = () => {
+  const isSmallScreen = useIsSmallScreen();
   return (
     <Container
       style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '16px'
+        gap: '24px'
       }}
     >
-      <Typography variant='h2' component='div'>
+      <Typography
+        variant={isSmallScreen ? 'h3' : 'h2'}
+        component='div'
+        textAlign='center'
+      >
         Proyectos trabajados
       </Typography>
 
@@ -32,7 +39,7 @@ export const ProjectsView = () => {
           to={`/projects/${project.projectId}`}
           style={{ textDecoration: 'none' }}
         >
-          <CardProject project={project} />
+          <CardProject project={project} isSmallScreen={isSmallScreen} />
         </Link>
       ))}
     </Container>
