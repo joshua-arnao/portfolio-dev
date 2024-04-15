@@ -146,8 +146,10 @@ import { useIsSmallScreen } from '../../hook/useSmallScreen';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { lightTheme } from '../../theme';
 
-export const NavBar = ({ toggleTheme }) => {
+export const NavBar = ({ toggleTheme, currentTheme }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [value, setValue] = useState(0);
   const location = useLocation();
@@ -235,13 +237,24 @@ export const NavBar = ({ toggleTheme }) => {
                 justifyContent: 'flex-end'
               }}
             >
-              <IconButton
-                aria-label='light'
-                style={{ color: '#FBD38D' }}
-                onClick={toggleTheme}
-              >
-                <LightModeIcon />
-              </IconButton>
+              {currentTheme === lightTheme ? (
+                <IconButton
+                  aria-label='night'
+                  style={{ color: 'secondary.main' }}
+                  onClick={toggleTheme}
+                >
+                  <DarkModeIcon />
+                </IconButton>
+              ) : (
+                <IconButton
+                  aria-label='light'
+                  style={{ color: 'primary.main' }}
+                  onClick={toggleTheme}
+                >
+                  <LightModeIcon />
+                </IconButton>
+              )}
+
               <IconButton
                 size='large'
                 aria-label='account of current user'

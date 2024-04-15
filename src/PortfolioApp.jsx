@@ -21,7 +21,10 @@ export const PortfolioApp = () => {
           color: 'secondary.main'
         }}
       >
-        <PortfolioRoutes toggleTheme={toggleTheme} />
+        <PortfolioRoutes
+          toggleTheme={toggleTheme}
+          currentTheme={currentTheme}
+        />
       </Box>
     </AppTheme>
   );

@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { PortfolioLayout } from '../layout/PortfolioLayout';
 import { DetailProjectsView, HomeView, ProjectsView } from '../views';
 
-export const PortfolioRoutes = ({ toggleTheme }) => {
+export const PortfolioRoutes = ({ toggleTheme, currentTheme }) => {
   // const routes = [
   //   {
   //     path: '/',
@@ -35,7 +35,15 @@ export const PortfolioRoutes = ({ toggleTheme }) => {
 
   return (
     <Routes>
-      <Route path='/' element={<PortfolioLayout toggleTheme={toggleTheme} />}>
+      <Route
+        path='/'
+        element={
+          <PortfolioLayout
+            toggleTheme={toggleTheme}
+            currentTheme={currentTheme}
+          />
+        }
+      >
         <Route path='/' element={<HomeView />} />
         <Route path='projects' element={<ProjectsView />} />
         <Route path='projects/:projectId' element={<DetailProjectsView />} />
