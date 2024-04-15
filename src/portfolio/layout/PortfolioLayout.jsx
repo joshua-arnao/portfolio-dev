@@ -3,14 +3,16 @@ import { Outlet } from 'react-router-dom';
 import { NavBar } from '../components';
 import { useIsSmallScreen } from '/src/hook/useSmallScreen';
 
-export const PortfolioLayout = () => {
+export const PortfolioLayout = ({ toggleTheme }) => {
   const isSmallScreen = useIsSmallScreen();
+
+  console.log('dato', toggleTheme);
 
   return (
     <Box
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
     >
-      <NavBar />
+      <NavBar toggleTheme={toggleTheme} />
 
       <Box
         component='main'

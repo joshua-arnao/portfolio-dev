@@ -1,11 +1,18 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box } from '@mui/material';
-import { AppTheme } from './theme';
+import { AppTheme, darkTheme, lightTheme } from './theme';
 import { PortfolioRoutes } from './portfolio/routes/PortfolioRoutes';
+import { useState } from 'react';
 
 export const PortfolioApp = () => {
+  const [currentTheme, setCurrentTheme] = useState(lightTheme);
+
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === darkTheme ? lightTheme : darkTheme);
+  };
+
   return (
-    <AppTheme>
+    <AppTheme theme={currentTheme}>
       <CssBaseline />
       <Box
         sx={{
@@ -14,7 +21,7 @@ export const PortfolioApp = () => {
           color: 'secondary.main'
         }}
       >
-        <PortfolioRoutes />
+        <PortfolioRoutes toggleTheme={toggleTheme} />
       </Box>
     </AppTheme>
   );

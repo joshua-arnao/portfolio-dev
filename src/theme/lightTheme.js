@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-export const darkTheme = createTheme({
+export const lightTheme = createTheme({
   typography: {
     fontFamily: 'Inter, sans-serif',
     h1: {
@@ -31,13 +31,13 @@ export const darkTheme = createTheme({
   },
 
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#252525'
+      main: '#ffffff'
     },
-    secondary: { main: '#ffffff' },
+    secondary: { main: '#252525' },
     link: {
-      main: '#ffffffb3'
+      main: '#252525'
     }
   }
 });

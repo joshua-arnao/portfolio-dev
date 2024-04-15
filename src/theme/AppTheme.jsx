@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@mui/material/styles';
 // import CssBaseline from '@mui/cor';
 
-import { darkTheme } from './index';
+// import { lightTheme } from './index';
 
-export const AppTheme = ({ children }) => {
-  return <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>;
+export const AppTheme = ({ children, theme }) => {
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

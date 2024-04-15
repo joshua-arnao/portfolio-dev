@@ -12,7 +12,7 @@
 // } from '@mui/material';
 // import LightModeIcon from '@mui/icons-material/LightMode';
 // import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 // export const NavBar = () => {
 //   // const [value, setValue] = useState(0)
@@ -125,39 +125,62 @@ import { Link } from 'react-router-dom';
 //   );
 // };
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
+  AppBar,
+  Avatar,
   BottomNavigation,
   BottomNavigationAction,
+  Box,
   Button,
   Container,
-  MenuItem
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography
 } from '@mui/material';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { Link, useLocation } from 'react-router-dom';
+
 import { useIsSmallScreen } from '../../hook/useSmallScreen';
 
-export const NavBar = () => {
+import MenuIcon from '@mui/icons-material/Menu';
+import LightModeIcon from '@mui/icons-material/LightMode';
+
+export const NavBar = ({ toggleTheme }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const storedValue = sessionStorage.getItem('navBarValue') || 0;
-  const [value, setValue] = useState(parseInt(storedValue, 10));
+  const [value, setValue] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Almacena el valor de la página actual en el almacenamiento local
+    localStorage.setItem('navBarValue', value);
+  }, [value]);
+
+  useEffect(() => {
+    // Cuando la ubicación cambie, actualiza el valor basado en la ruta actual
+    switch (true) {
+      case location.pathname === '/':
+        setValue(0);
+        break;
+      case location.pathname.startsWith('/projects'):
+        setValue(1);
+        break;
+      default:
+        setValue(0); // Valor predeterminado para otras rutas
+        break;
+    }
+  }, [location]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+    setValue(value === 1 ? 1 : 0);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
 
-    setValue(value === 0 ? 1 : 0);
+    setValue(value === 0 ? 0 : 1);
   };
 
   const isSmallScreen = useIsSmallScreen();
@@ -213,6 +236,13 @@ export const NavBar = () => {
               }}
             >
               <IconButton
+                aria-label='light'
+                style={{ color: '#FBD38D' }}
+                onClick={toggleTheme}
+              >
+                <LightModeIcon />
+              </IconButton>
+              <IconButton
                 size='large'
                 aria-label='account of current user'
                 aria-controls='menu-appbar'
@@ -222,6 +252,7 @@ export const NavBar = () => {
               >
                 <MenuIcon />
               </IconButton>
+
               <Menu
                 id='menu-appbar'
                 anchorEl={anchorElNav}
@@ -237,16 +268,14 @@ export const NavBar = () => {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' }
+                  display: { xs: 'block', md: 'none' },
+                  '& .MuiPaper-root': {
+                    // Estilo para el contenedor del menú desplegable
+                    background: '#333', // Cambia el color del fondo del menú desplegable
+                    color: '#fff' // Cambia el color del texto del menú desplegable
+                  }
                 }}
               >
-                {/* {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign='center'>
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                ))} */}
                 <MenuItem
                   component={Link}
                   to='/'
@@ -257,10 +286,10 @@ export const NavBar = () => {
                           background: '#88CCCA',
                           color: '#000'
                         }
-                      : { background: 'none' }
+                      : { background: 'none', color: '#fff' }
                   }
                 >
-                  Inicio
+                  About
                 </MenuItem>
                 <MenuItem
                   component={Link}
@@ -269,7 +298,7 @@ export const NavBar = () => {
                   style={
                     value === 1
                       ? { background: '#88CCCA', color: '#000' }
-                      : { background: 'none' }
+                      : { background: 'none', color: '#fff' }
                   }
                 >
                   Projects
@@ -343,6 +372,7 @@ export const NavBar = () => {
               startIcon={
                 <LightModeIcon style={{ width: '24px', marginRight: '0px' }} />
               }
+              onClick={toggleTheme}
             />
           </Box>
         </Toolbar>
