@@ -33,11 +33,20 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#252525'
+      main: '#252525',
+      light: '#252525'
     },
-    secondary: { main: '#ffffff' },
-    link: {
-      main: '#ffffffb3'
+    secondary: { main: '#FFF' },
+    text: {
+      primary: '#FFF',
+      secondary: '#000',
+      other: '#FFFFF1'
+    },
+    background: {
+      primary: '#88CCCA',
+      secondary: { main: '#FBD38D', light: '#333' },
+      nav: 'rgba(37, 37, 37, 0.50)',
+      countdown: 'rgba(255, 255, 255, 0.16)'
     }
   }
 });

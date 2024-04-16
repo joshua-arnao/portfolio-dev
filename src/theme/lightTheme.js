@@ -33,11 +33,20 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#ffffff'
+      main: '#fff',
+      light: '#252525'
     },
     secondary: { main: '#252525' },
-    link: {
-      main: '#252525'
+    text: {
+      primary: '#000',
+      secondary: '#fff',
+      other: '#333'
+    },
+    background: {
+      primary: '#88CCCA',
+      secondary: { main: '#333', light: '#FBD38D' },
+      nav: 'rgba(255, 255, 255, 0.35)',
+      countdown: 'rgba(0, 0, 0, 0.16)'
     }
   }
 });

@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import { Timeline } from '@mui/lab';
 import { timelineItemClasses } from '@mui/lab/TimelineItem';
-import { Countdown, MyTimeLine } from '../components/index';
+import { Countdown, MyTimeLine, ChipSkill } from '../components/index';
 
 import PlaceIcon from '@mui/icons-material/Place';
 import CakeIcon from '@mui/icons-material/Cake';
@@ -48,7 +48,8 @@ const experiences = [
   { year: 2022, type: 'work', title: 'Product Designer' }
 ];
 
-export const HomeView = () => {
+export const HomeView = ({ currentTheme }) => {
+  const { text } = currentTheme.palette;
   return (
     <Container
       style={{
@@ -73,7 +74,7 @@ export const HomeView = () => {
           display='flex'
           flexDirection='column'
           alignItems='center'
-          gap='8px'
+          gap='24px'
           style={{ width: '100%' }}
         >
           <Typography variant='h2' component='div' textAlign='center'>
@@ -85,29 +86,31 @@ export const HomeView = () => {
           </Typography>
           <Stack
             direction='row'
+            flex
             justifyContent='flex-start'
             spacing={0.5}
             flexWrap='wrap'
             gap='8px'
+            width='100%'
           >
+            <Chip
+              icon={<EmailIcon />}
+              label='joshua.arnao@icloud.com'
+              style={{ color: text.other, fontSize: '13px' }}
+            />
             <Chip
               icon={<PlaceIcon />}
               label='Lima, Perú'
-              style={{ color: '#858E96', fontSize: '14px' }}
+              style={{ color: text.other, fontSize: '13px' }}
             />
             <Chip
               icon={<CakeIcon />}
               label='28 de Junio'
-              style={{ color: '#858E96', fontSize: '14px' }}
-            />
-            <Chip
-              icon={<EmailIcon />}
-              label='joshua.arnao@icloud.com'
-              style={{ color: '#858E96', fontSize: '14px' }}
+              style={{ color: text.other, fontSize: '13px' }}
             />
           </Stack>
 
-          <Countdown />
+          <Countdown currentTheme={currentTheme} />
         </Box>
       </Box>
 
@@ -138,11 +141,7 @@ export const HomeView = () => {
 
         <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
           {skills.map((skill, index) => (
-            <Chip
-              key={index}
-              label={skill}
-              style={{ backgroundColor: '#FFF' }}
-            />
+            <ChipSkill key={index} label={skill} currentTheme={currentTheme} />
           ))}
         </Stack>
       </Box>

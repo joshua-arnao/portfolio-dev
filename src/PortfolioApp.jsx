@@ -5,7 +5,7 @@ import { PortfolioRoutes } from './portfolio/routes/PortfolioRoutes';
 import { useState } from 'react';
 
 export const PortfolioApp = () => {
-  const [currentTheme, setCurrentTheme] = useState(lightTheme);
+  const [currentTheme, setCurrentTheme] = useState(darkTheme);
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme === darkTheme ? lightTheme : darkTheme);

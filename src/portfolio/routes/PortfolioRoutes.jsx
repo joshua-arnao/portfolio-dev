@@ -44,9 +44,15 @@ export const PortfolioRoutes = ({ toggleTheme, currentTheme }) => {
           />
         }
       >
-        <Route path='/' element={<HomeView />} />
-        <Route path='projects' element={<ProjectsView />} />
-        <Route path='projects/:projectId' element={<DetailProjectsView />} />
+        <Route path='/' element={<HomeView currentTheme={currentTheme} />} />
+        <Route
+          path='projects'
+          element={<ProjectsView currentTheme={currentTheme} />}
+        />
+        <Route
+          path='projects/:projectId'
+          element={<DetailProjectsView currentTheme={currentTheme} />}
+        />
       </Route>
     </Routes>
     // routeElement

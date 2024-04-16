@@ -27,7 +27,7 @@ const firebaseConfig = {
   measurementId: measurementId
 };
 
-export const Countdown = () => {
+export const Countdown = ({ currentTheme }) => {
   const isSmallScreen = useIsSmallScreen();
   const [countdown, setCountdown] = useState(null);
 
@@ -92,11 +92,12 @@ export const Countdown = () => {
     };
   }, [countdown]);
 
+  const { background } = currentTheme.palette;
   return (
     <Container
       style={{
         backdropFilter: 'blur(10px)',
-        backgroundColor: 'rgba(255, 255, 255, 0.16)',
+        backgroundColor: background.countdown,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

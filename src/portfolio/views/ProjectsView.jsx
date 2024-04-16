@@ -14,7 +14,7 @@ const projects = [
   }
 ];
 
-export const ProjectsView = () => {
+export const ProjectsView = ({ currentTheme }) => {
   const isSmallScreen = useIsSmallScreen();
   return (
     <Container
@@ -39,7 +39,11 @@ export const ProjectsView = () => {
           to={`/projects/${project.projectId}`}
           style={{ textDecoration: 'none' }}
         >
-          <CardProject project={project} isSmallScreen={isSmallScreen} />
+          <CardProject
+            project={project}
+            isSmallScreen={isSmallScreen}
+            currentTheme={currentTheme}
+          />
         </Link>
       ))}
     </Container>

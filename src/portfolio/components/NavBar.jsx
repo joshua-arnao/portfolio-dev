@@ -147,7 +147,7 @@ import { useIsSmallScreen } from '../../hook/useSmallScreen';
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { lightTheme } from '../../theme';
+import { darkTheme } from '../../theme';
 
 export const NavBar = ({ toggleTheme, currentTheme }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -187,6 +187,7 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
 
   const isSmallScreen = useIsSmallScreen();
 
+  const { primary, text, background } = currentTheme.palette;
   return (
     <Box
       sx={{ flexGrow: 1 }}
@@ -197,7 +198,7 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
         position='static'
         style={{
           boxShadow: 'none',
-          background: 'rgba(37, 37, 37, 0.50)',
+          background: background.nav,
           backdropFilter: 'blur(8px)',
           alignItems: 'center'
         }}
@@ -237,23 +238,17 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                 justifyContent: 'flex-end'
               }}
             >
-              {currentTheme === lightTheme ? (
-                <IconButton
-                  aria-label='night'
-                  style={{ color: 'secondary.main' }}
-                  onClick={toggleTheme}
-                >
-                  <DarkModeIcon />
-                </IconButton>
-              ) : (
-                <IconButton
-                  aria-label='light'
-                  style={{ color: 'primary.main' }}
-                  onClick={toggleTheme}
-                >
+              <IconButton
+                aria-label='night'
+                style={{ color: background.secondary.main }}
+                onClick={toggleTheme}
+              >
+                {currentTheme === darkTheme ? (
                   <LightModeIcon />
-                </IconButton>
-              )}
+                ) : (
+                  <DarkModeIcon />
+                )}
+              </IconButton>
 
               <IconButton
                 size='large'
@@ -265,7 +260,6 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
               >
                 <MenuIcon />
               </IconButton>
-
               <Menu
                 id='menu-appbar'
                 anchorEl={anchorElNav}
@@ -284,8 +278,7 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                   display: { xs: 'block', md: 'none' },
                   '& .MuiPaper-root': {
                     // Estilo para el contenedor del menú desplegable
-                    background: '#333', // Cambia el color del fondo del menú desplegable
-                    color: '#fff' // Cambia el color del texto del menú desplegable
+                    background: primary.main // Cambia el color del fondo del menú desplegable
                   }
                 }}
               >
@@ -296,10 +289,10 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                   style={
                     value === 0
                       ? {
-                          background: '#88CCCA',
-                          color: '#000'
+                          background: background.primary,
+                          color: text.secondary
                         }
-                      : { background: 'none', color: '#fff' }
+                      : { background: 'none', color: text.primary }
                   }
                 >
                   About
@@ -310,8 +303,11 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                   onClick={handleCloseNavMenu}
                   style={
                     value === 1
-                      ? { background: '#88CCCA', color: '#000' }
-                      : { background: 'none', color: '#fff' }
+                      ? {
+                          background: background.primary,
+                          color: text.secondary
+                        }
+                      : { background: 'none', color: text.primary }
                   }
                 >
                   Projects
@@ -334,7 +330,6 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                 }}
                 style={{
                   background: 'none',
-                  color: '#fff',
                   display: 'flex',
                   justifyContent: 'flex-start'
                 }}
@@ -344,11 +339,11 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                   style={
                     value === 0
                       ? {
-                          background: '#88CCCA',
-                          color: '#000',
+                          background: background.primary,
+                          color: text.secondary,
                           padding: '0px'
                         }
-                      : { background: 'none', color: '#fff' }
+                      : { background: 'none', color: text.primary }
                   }
                   component={Link}
                   to='/'
@@ -358,8 +353,11 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
                   label='Projects'
                   style={
                     value === 1
-                      ? { background: '#88CCCA', color: '#000' }
-                      : { background: 'none', color: '#fff' }
+                      ? {
+                          background: background.primary,
+                          color: text.secondary
+                        }
+                      : { background: 'none', color: text.primary }
                   }
                   component={Link}
                   to='/projects'
@@ -378,12 +376,18 @@ export const NavBar = ({ toggleTheme, currentTheme }) => {
               size='large'
               style={{
                 boxShadow: 'none',
-                background: '#FBD38D',
-                color: '#000',
+                background: background.secondary.main,
+                color: primary.main,
                 paddingLeft: '33px'
               }}
               startIcon={
-                <LightModeIcon style={{ width: '24px', marginRight: '0px' }} />
+                currentTheme === darkTheme ? (
+                  <LightModeIcon
+                    style={{ width: '24px', marginRight: '0px' }}
+                  />
+                ) : (
+                  <DarkModeIcon style={{ width: '24px', marginRight: '0px' }} />
+                )
               }
               onClick={toggleTheme}
             />

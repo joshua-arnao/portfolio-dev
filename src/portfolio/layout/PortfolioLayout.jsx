@@ -6,6 +6,7 @@ import { useIsSmallScreen } from '/src/hook/useSmallScreen';
 export const PortfolioLayout = ({ toggleTheme, currentTheme }) => {
   const isSmallScreen = useIsSmallScreen();
 
+  console.log('currentTheme', currentTheme);
   return (
     <Box
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
@@ -20,7 +21,7 @@ export const PortfolioLayout = ({ toggleTheme, currentTheme }) => {
         }}
       >
         {/* {children} */}
-        <Outlet />
+        <Outlet currentTheme={currentTheme} />
       </Box>
     </Box>
   );

@@ -1,8 +1,9 @@
-import { Box, Chip, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { useState } from 'react';
+import { ChipSkill } from './ChipSkill';
 
-export const CardProject = ({ project, isSmallScreen }) => {
+export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
   const { title, description, imgCard, tools } = project;
   const [isHover, setIsHover] = useState(false);
 
@@ -69,13 +70,10 @@ export const CardProject = ({ project, isSmallScreen }) => {
               {description}
             </Typography>
           </Box>
+
           <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
             {tools.map((tool, index) => (
-              <Chip
-                key={index}
-                label={tool}
-                style={{ backgroundColor: '#FFF' }}
-              />
+              <ChipSkill key={index} label={tool} currentTheme={currentTheme} />
             ))}
           </Stack>
         </Grid>
