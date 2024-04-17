@@ -16,6 +16,7 @@ const projects = [
 
 export const ProjectsView = ({ currentTheme }) => {
   const isSmallScreen = useIsSmallScreen();
+
   return (
     <Container
       style={{

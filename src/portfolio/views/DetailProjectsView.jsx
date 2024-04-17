@@ -1,7 +1,6 @@
 import {
   Box,
   Breadcrumbs,
-  Chip,
   Container,
   List,
   ListItem,
@@ -15,6 +14,8 @@ import { Link, useParams } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CheckIcon from '@mui/icons-material/Check';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { darkTheme } from '../../theme/darkTheme';
+import { ChipSkill } from '../components/ChipSkill';
 
 const projects = [
   {
@@ -92,19 +93,24 @@ const projects = [
   }
 ];
 
-export const DetailProjectsView = () => {
+export const DetailProjectsView = ({ currentTheme }) => {
   const { projectId } = useParams();
 
   const project = projects.find((p) => p.projectId.toString() === projectId);
   const { tools } = project;
 
+  const { primary, background } = currentTheme.palette;
+
   const breadcrumbs = [
     <Link to='/projects' key='1' style={{ textDecoration: 'none' }}>
-      <Linked underline='hover' color='#FFFFFFB3'>
+      <Linked
+        underline='hover'
+        color={currentTheme === darkTheme ? '#fff' : '#000'}
+      >
         projects
       </Linked>
     </Link>,
-    <Typography key='3' color='#88CCCA'>
+    <Typography key='3' color={background.primary}>
       {project.title}
     </Typography>
   ];
@@ -121,7 +127,7 @@ export const DetailProjectsView = () => {
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize='small' />}
         aria-label='breadcrumb'
-        color='#FFFFFFB3'
+        color={primary}
       >
         {breadcrumbs}
       </Breadcrumbs>
@@ -131,7 +137,7 @@ export const DetailProjectsView = () => {
 
       <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
         {tools.map((tool, index) => (
-          <Chip key={index} label={tool} style={{ backgroundColor: '#FFF' }} />
+          <ChipSkill key={index} label={tool} currentTheme={currentTheme} />
         ))}
       </Stack>
 
@@ -166,7 +172,7 @@ export const DetailProjectsView = () => {
             {project.rol.map((rols, index) => (
               <ListItem key={index}>
                 <ListItemIcon>
-                  <CheckIcon style={{ color: '#fff' }} />
+                  <CheckIcon style={{ color: primary }} />
                 </ListItemIcon>
                 <ListItemText primary={rols} />
               </ListItem>
@@ -190,7 +196,7 @@ export const DetailProjectsView = () => {
                   <ListItemIcon>
                     <HorizontalRuleIcon
                       fontSize='small'
-                      style={{ color: '#fff' }}
+                      style={{ color: primary }}
                     />
                   </ListItemIcon>
                   <ListItemText primary={functionalities} />
@@ -215,7 +221,7 @@ export const DetailProjectsView = () => {
                 <ListItemIcon>
                   <HorizontalRuleIcon
                     fontSize='small'
-                    style={{ color: '#fff' }}
+                    style={{ color: primary }}
                   />
                 </ListItemIcon>
                 <ListItemText primary={pareto} />
@@ -243,7 +249,7 @@ export const DetailProjectsView = () => {
                 <ListItemIcon>
                   <HorizontalRuleIcon
                     fontSize='small'
-                    style={{ color: '#fff' }}
+                    style={{ color: primary }}
                   />
                 </ListItemIcon>
                 <ListItemText primary={pareto} />
@@ -273,7 +279,7 @@ export const DetailProjectsView = () => {
                 <ListItemIcon>
                   <HorizontalRuleIcon
                     fontSize='small'
-                    style={{ color: '#fff' }}
+                    style={{ color: primary }}
                   />
                 </ListItemIcon>
                 <ListItemText primary={pareto} />
@@ -303,7 +309,7 @@ export const DetailProjectsView = () => {
                 <ListItemIcon>
                   <HorizontalRuleIcon
                     fontSize='small'
-                    style={{ color: '#fff' }}
+                    style={{ color: primary }}
                   />
                 </ListItemIcon>
                 <ListItemText primary={pareto} />

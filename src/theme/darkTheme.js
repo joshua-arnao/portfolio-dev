@@ -47,6 +47,9 @@ export const darkTheme = createTheme({
       secondary: { main: '#FBD38D', light: '#333' },
       nav: 'rgba(37, 37, 37, 0.50)',
       countdown: 'rgba(255, 255, 255, 0.16)'
+    },
+    link: {
+      main: '#FFF'
     }
   }
 });

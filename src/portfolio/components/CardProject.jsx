@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { useState } from 'react';
 import { ChipSkill } from './ChipSkill';
+import { darkTheme } from '../../theme/darkTheme';
 
 export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
   const { title, description, imgCard, tools } = project;
@@ -25,19 +26,26 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
         style={
           !isHover
             ? {
-                border: '1px solid rgb(255,255,255)',
+                border:
+                  currentTheme === darkTheme
+                    ? '1px solid #fff'
+                    : '1px solid #333',
                 padding: '20px 24px',
                 borderRadius: '20px',
-                color: 'rgb(255,255,255)',
                 transition: 'background-color 0.3s ease'
               }
             : {
-                border: '1px solid rgb(255,255,255)',
+                border:
+                  currentTheme === darkTheme
+                    ? '1px solid #fff'
+                    : '1px solid #333',
                 padding: '20px 24px',
                 borderRadius: '20px',
-                color: 'rgb(255,255,255)',
                 transition: 'background-color 0.3s ease',
-                backgroundColor: 'rgb(255, 255, 255, 0.05)',
+                backgroundColor:
+                  currentTheme === darkTheme
+                    ? 'rgb(255, 255, 255, 0.05)'
+                    : 'rgb(0, 0, 0, 0.05)',
                 cursor: 'pointer'
               }
         }
@@ -63,10 +71,10 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
           }}
         >
           <Box>
-            <Typography variant='h6' component='div'>
+            <Typography variant='h6' component='div' color='secondary'>
               {title}
             </Typography>
-            <Typography variant='body2' component='div'>
+            <Typography variant='body2' component='div' color='secondary'>
               {description}
             </Typography>
           </Box>
