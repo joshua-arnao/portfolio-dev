@@ -37,13 +37,13 @@ const experiences = [
     year: 2021,
     type: 'study',
     title: 'Especialización UI',
-    link: 'www.google.com'
+    link: 'https://medu-certifications.medu.academy/Jr8JsIguhdH61inKXABL'
   },
   {
     year: 2022,
     type: 'study',
     title: 'Desarrollo Web Fullstack',
-    link: 'www.google.com'
+    link: 'https://academico-cloud.tecsup.edu.pe/pcc/#/home/certificado?c=583348&n=COD%2FCPE%2F22%2F106&t=E'
   },
   { year: 2022, type: 'work', title: 'Product Designer' }
 ];
