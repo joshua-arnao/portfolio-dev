@@ -25,7 +25,8 @@ const skills = [
   'React JS',
   'Analytics',
   'Excel',
-  'IA Generativa'
+  'IA Generativa',
+  'Gestión de proyectos'
 ];
 
 const experiences = [
@@ -82,7 +83,7 @@ export const HomeView = ({ currentTheme }) => {
           </Typography>
           <Typography component='div' textAlign='justify'>
             Diseñador de productos digitales con experiencia en metodología
-            Agile, design thinking y CPS.{' '}
+            Agile, Design Thinking y CPS.{' '}
           </Typography>
           <Stack
             direction='row'
@@ -123,13 +124,14 @@ export const HomeView = ({ currentTheme }) => {
           Soy un apasionado Diseñador de Productos Digitales con un deseo
           constante de innovar y mejorar. Siempre estoy buscando nuevas formas
           de combinar la creatividad, la eficiencia y la mejora en la
-          experiencia del usuario.{''}
+          experiencia del usuario.
+          <br />
           Mi formación en ingeniería industrial y mi amplia experiencia en
           diseño me han inculcado la importancia de encontrar el equilibrio
           entre la estética y la funcionalidad. Mi misión es crear experiencias
           digitales que no solo atraigan visualmente, sino que también
           solucionen problemas reales. Con un enfoque metódico y una pasión
-          incansable por el aprendizaje, abordo los desafíos con eficacia y
+          insaciable por el aprendizaje, abordo los desafíos con eficacia y
           desvelo soluciones innovadoras.
         </Typography>
       </Box>
