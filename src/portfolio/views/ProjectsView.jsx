@@ -10,7 +10,15 @@ const projects = [
     description:
       'Redesigning tiket.coms Car Rentals mobile app due to high inquiries regarding the product & service',
     imgCard: '/assets/photos/imagePortfolio.png',
-    tools: ['React', 'Node.js', 'Notion']
+    tools: ['React', 'Node.js', 'Figma']
+  },
+  {
+    projectId: 2,
+    title: 'Proceso de Créditos | Web',
+    description:
+      'Este proyecto buscaba desarrollar una plataforma intermediaria entre clientes y bancos en Panamá, simplificando...',
+    imgCard: '/assets/photos/HomeBankiao.png',
+    tools: ['React', 'Marvel', 'Figma']
   }
 ];
 

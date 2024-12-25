@@ -46,7 +46,13 @@ const experiences = [
     title: 'Desarrollo Web Fullstack',
     link: 'www.google.com'
   },
-  { year: 2022, type: 'work', title: 'Product Designer' }
+  { year: 2022, type: 'work', title: 'Product Designer' },
+  {
+    year: 2024,
+    type: 'study',
+    title: 'Gestion de Proyectos en base al PMBOK',
+    link: 'https://drive.google.com/file/d/10RfRqYp9Ve7Hbp0UrMvU4ohIz5YOcK9f/view'
+  }
 ];
 
 export const HomeView = ({ currentTheme }) => {

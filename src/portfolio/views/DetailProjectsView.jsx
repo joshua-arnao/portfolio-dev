@@ -85,11 +85,62 @@ const projects = [
   },
   {
     projectId: 2,
-    title: 'Mobile App Redisgn 2| App',
+    title: 'Proceso de Créditos | Web',
+    tools: ['React', 'Marvel', 'Figma', 'Looker Studio'],
     description:
-      'Redesigning tiket.coms Car Rentals mobile app due to high inquiries regarding the product & service',
-    imgCard: '/assets/img/ImgProjects.png',
-    tools: ['React', 'Node.js']
+      'Este proyecto buscaba desarrollar una plataforma intermediaria entre clientes y bancos en Panamá, simplificando y acelerando el proceso de acceso a productos financieros. La solución abordó la complejidad del sistema tradicional mediante una experiencia digital eficiente.',
+    rol: [
+      'Validación de la idea mediante entrevistas y análisis de mercado.',
+      'Diseño de flujos y prototipos de baja y alta fidelidad.',
+      'Desarrollo de algunas secciones de la plataforma.',
+      'Implementación de tests para mejorar la experiencia del usuario.'
+    ],
+    problem: {
+      description:
+        'En Panamá, acceder a un crédito es un proceso complejo y lento, con múltiples formularios, largas filas, y gasto de tiempo en clientes que no aplican. Las entidades financieras enfrentaban dificultades para identificar clientes viables y optimizar su proceso de generación de leads.',
+      pareto: []
+    },
+    understanding: {
+      description:
+        'La plataforma está diseñada para conectar usuarios (asalariados, independientes y PYMEs) con bancos y cooperativas, consolidando información bancaria en un solo lugar. Los usuarios pueden:',
+      list: [
+        'Comparar y aplicar a múltiples entidades.',
+        'Recibir asesoría financiera y un perfil crediticio online.',
+        'Reducir hasta un 60% del tiempo en procesos de análisis y pre-aprobaciones.'
+      ]
+    },
+    breacking: {
+      description:
+        'Se realizarón los siguientes métodos de investigación con la finalidad de entender mejor el problema:',
+      list: [
+        'Entrevistas a usuarios a partir de reclamos de servicio al cliente.',
+        'Análisis UX (analizando el recorrido del usuario en la aplicación: dónde se realizan interacciones y dónde abandonan el proceso).',
+        'Workshops para generar ideas sobre posibles problemas y soluciones',
+        'Iteración del diseño y pruebas de usabilidad.'
+      ],
+      images: [
+        '/assets/photos/imagePortfolio.png',
+        '/assets/photos/imagePortfolio.png'
+      ]
+    },
+    overall: {
+      description: 'Los cambios mejorán lo siguiente',
+      list: [
+        'Página de inicio rediseñada (la función adicional conduce a un 25,8% de aumento en la tasa de conversión de reservas).',
+        'Página de revisión de reserva, zonas adicionales y formulario de reserva rediseñadas (aumento del 19,8%).',
+        'Disminución de quejas y consultas en un 5%.'
+      ],
+      images: ['/assets/photos/imagePortfolio.png']
+    },
+    conclusions: {
+      description: '',
+      list: [
+        'Aprendí a analizar las rutas de los usuarios a través de herramientas analíticas.',
+        'Aprendí a tener en cuenta las numerosas quejas de los usuarios mediante entrevistas.',
+        'Aprendí a realizar múltiples pruebas de usabilidad.'
+      ],
+      images: []
+    }
   }
 ];
 
