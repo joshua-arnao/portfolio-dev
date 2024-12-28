@@ -9,7 +9,7 @@ const projects = [
     title: 'Rediseño rentadora de auto | App',
     description:
       'Redesigning tiket.coms Car Rentals mobile app due to high inquiries regarding the product & service',
-    imgCard: '/assets/photos/imagePortfolio.png',
+    imgCard: '/assets/photos/Backgound&Problem.png',
     tools: ['React', 'Node.js', 'Figma']
   },
   {

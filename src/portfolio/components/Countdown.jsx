@@ -26,7 +26,7 @@ export const Countdown = ({ currentTheme }) => {
     const database = getDatabase(app);
     const countdownRef = ref(database, 'countdown');
 
-    const targetDate = new Date('2024-12-02T23:59:59'); // Fecha límite fija
+    const targetDate = new Date('2024-12-31T23:59:59'); // Fecha límite fija
 
     const retrieveCountdown = async () => {
       try {

@@ -48,6 +48,9 @@ const projects = [
         'Los usuarios eligen el tipo de auto, la lista de proveedores que ofrecen ese tipo de auto y el paquete que ofrece la empresa.',
         'Los usuarios obtienen información sobre el tipo de auto, el proveedor y el paquete elegido.',
         'Los usuarios ingresa la ubicación de recojo y/o devolución dle auto, junto con zonas adicionales que desea visitar.'
+      ],
+      images: [
+        '/assets/photos/Backgound&Problem.png',
       ]
     },
     breacking: {
@@ -60,8 +63,8 @@ const projects = [
         'Iteración del diseño y pruebas de usabilidad.'
       ],
       images: [
-        '/assets/photos/imagePortfolio.png',
-        '/assets/photos/imagePortfolio.png'
+        '/assets/photos/InquiriesProblem.png',
+        '/assets/photos/SoluctionsProblem.png'
       ]
     },
     overall: {
@@ -71,7 +74,7 @@ const projects = [
         'Página de revisión de reserva, zonas adicionales y formulario de reserva rediseñadas (aumento del 19,8%).',
         'Disminución de quejas y consultas en un 5%.'
       ],
-      images: ['/assets/photos/imagePortfolio.png']
+      images: ['/assets/photos/ABTesting.png']
     },
     conclusions: {
       description: '',
@@ -107,16 +110,18 @@ const projects = [
         'Comparar y aplicar a múltiples entidades.',
         'Recibir asesoría financiera y un perfil crediticio online.',
         'Reducir hasta un 60% del tiempo en procesos de análisis y pre-aprobaciones.'
+      ],
+      images: [
+        '/assets/photos/imagePortfolio.png',
       ]
     },
     breacking: {
       description:
-        'Se realizarón los siguientes métodos de investigación con la finalidad de entender mejor el problema:',
+        'Métodos de investigación:',
       list: [
-        'Entrevistas a usuarios a partir de reclamos de servicio al cliente.',
-        'Análisis UX (analizando el recorrido del usuario en la aplicación: dónde se realizan interacciones y dónde abandonan el proceso).',
-        'Workshops para generar ideas sobre posibles problemas y soluciones',
-        'Iteración del diseño y pruebas de usabilidad.'
+        'Encuestas (validación: 80% de los encuestados usarían la plataforma).',
+        'Análisis de procesos bancarios tradicionales.',
+        'Mapas de experiencia de usuario para identificar puntos críticos.',
       ],
       images: [
         '/assets/photos/imagePortfolio.png',
@@ -124,20 +129,20 @@ const projects = [
       ]
     },
     overall: {
-      description: 'Los cambios mejorán lo siguiente',
+      description: 'Propuesta inicial:',
       list: [
-        'Página de inicio rediseñada (la función adicional conduce a un 25,8% de aumento en la tasa de conversión de reservas).',
-        'Página de revisión de reserva, zonas adicionales y formulario de reserva rediseñadas (aumento del 19,8%).',
-        'Disminución de quejas y consultas en un 5%.'
+        'Incremento del interés por la plataforma: el 80% de los encuestados la consideraron útil.',
+        'Reducción esperada del tiempo de proceso en un 60%.',
+        'Incremento en leads viables para entidades financieras.'
       ],
       images: ['/assets/photos/imagePortfolio.png']
     },
     conclusions: {
       description: '',
       list: [
-        'Aprendí a analizar las rutas de los usuarios a través de herramientas analíticas.',
-        'Aprendí a tener en cuenta las numerosas quejas de los usuarios mediante entrevistas.',
-        'Aprendí a realizar múltiples pruebas de usabilidad.'
+        'Desarrollé habilidades para estructurar validaciones tempranas de ideas de negocio.',
+        'Aprendí a diseñar y testear prototipos de baja y alta fidelidad para plataformas complejas.',
+        'Me enfoqué en diseñar flujos que respondieran a necesidades tanto de usuarios como de entidades financieras.'
       ],
       images: []
     }
@@ -280,11 +285,15 @@ export const DetailProjectsView = ({ currentTheme }) => {
             ))}
           </List>
         </Typography>
+
+        <Box width='100%' display='flex' flexDirection='column' gap='16px'>
+          {Object.values(project.understanding.images).map((image, index) => (
+            <img key={index} src={image} />
+          ))}
+        </Box>
       </Box>
 
-      <Box width='100%' display='flex' flexDirection='column' gap='16px'>
-        <img src='/assets/photos/imagePortfolio.png' />
-      </Box>
+      
 
       <Box width='100%' display='flex' flexDirection='column' gap='16px'>
         <Typography variant='subtitle1' component='div' width='100%'>
