@@ -38,7 +38,7 @@ export const MyTimeLine = ({ experience }) => {
           alignItems="center"
           gap="4px"
           sx={{
-            color: type === "study" ? "#F3B" : null,
+            color: type === "study" ? "#F3B" : '#88CCCA',
             "&:hover": {
               color: "rgb(136, 204, 202)",
             },
