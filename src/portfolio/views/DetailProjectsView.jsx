@@ -23,7 +23,7 @@ const projects = [
     projectId: 1,
     link: [],
     title: 'Rediseño rentadora de auto | App',
-    tools: ['React', 'Node.js', 'Notion'],
+    tools: ['Figma'],
     description:
       'Este proyecto se centra en mejorar la aplicación móvil de una rentadora de autos en Cusco Perú, resolviendo los puntos críticos que enfrentan los usuarios durante el uso del producto.\n\nDebido a la confidencialidad del trabajo, no es posible mostrar el caso de estudio completo.',
     rol: [
@@ -115,7 +115,7 @@ const projects = [
         'Reducir hasta un 60% del tiempo en procesos de análisis y pre-aprobaciones.'
       ],
       images: [
-        '/assets/photos/imagePortfolio.png',
+        '/assets/photos/CreditoUnderstand.png',
       ]
     },
     breacking: {
@@ -127,8 +127,8 @@ const projects = [
         'Mapas de experiencia de usuario para identificar puntos críticos.',
       ],
       images: [
-        '/assets/photos/imagePortfolio.png',
-        '/assets/photos/imagePortfolio.png'
+        '/assets/photos/CreditoBreacking.png',
+        '/assets/photos/CreditoBreackingSecond.png'
       ]
     },
     overall: {
@@ -138,7 +138,7 @@ const projects = [
         'Reducción esperada del tiempo de proceso en un 60%.',
         'Incremento en leads viables para entidades financieras.'
       ],
-      images: ['/assets/photos/imagePortfolio.png']
+      images: ['/assets/photos/CreditoResults.png']
     },
     conclusions: {
       description: '',
@@ -179,7 +179,7 @@ const projects = [
         'Documentar estas etiquetas para un fácil acceso y comprensión por parte del equipo de desarrollo.',
       ],
       images: [
-        '/assets/photos/Backgound&Problem.png',
+        '/assets/photos/WidgetUnderstand.png',
       ]
     },
     breacking: {
@@ -191,8 +191,8 @@ const projects = [
         'Diseñé iterativamente el widget, probándolo con miembros de la comunidad y ajustando según el feedback recibido.',
       ],
       images: [
-        '/assets/photos/InquiriesProblem.png',
-        '/assets/photos/SoluctionsProblem.png'
+        '/assets/photos/WidgetBreacking.png',
+        '/assets/photos/WidgetBreackingSecond.png'
       ]
     },
     overall: {
@@ -202,7 +202,7 @@ const projects = [
         'Se tiene mas de 1400 usuarios usando diariamente el widget.',
         'En mi equipo de trabajo se redujo en mas de un 90% las repreguntas o malos entendidos en las asignaciones de las etiquetas'
       ],
-      images: ['/assets/photos/ABTesting.png']
+      images: ['/assets/photos/WidgetResults.png']
     },
     conclusions: {
       description: '',

@@ -9,8 +9,8 @@ const projects = [
     title: "Rediseño rentadora de auto | App",
     description:
       "Redesigning tiket.coms Car Rentals mobile app due to high inquiries regarding the product & service",
-    imgCard: "/assets/photos/Backgound&Problem.png",
-    tools: ["React", "Node.js", "Figma"],
+    imgCard: "/assets/photos/PreviewRentadora.png",
+    tools: ["Figma"],
   },
   {
     projectId: 2,
@@ -25,7 +25,7 @@ const projects = [
     title: "Figma Tracking Analytics | Widget",
     description:
       "Contribuir a la comunidad de Figma al crear un widget que facilita la documentación y el seguimiento de etiquetas para Google Analitycs...",
-    imgCard: "/assets/photos/HomeBankiao.png",
+    imgCard: "/assets/photos/PreviewWidget.png",
     tools: ["TypeScript", "Figma", "Google Analytics"],
   },
 ];

@@ -45,7 +45,7 @@ const experiences = [
     year: 2021,
     type: 'study',
     title: 'Especialización UI',
-    link: 'www.google.com'
+    link: 'https://portfolio-documents.s3.us-east-1.amazonaws.com/Joshua/certificado-medu.pdf'
   },
   {
     year: 2022,
@@ -97,9 +97,15 @@ export const HomeView = ({ currentTheme }) => {
           gap='24px'
           style={{ width: '100%' }}
         >
-          <Typography variant='h2' component='div' textAlign='center'>
-            Joshua Arnao Canessa
-          </Typography>
+          <Box>
+            <Typography variant='h2' component='div' textAlign='center'>
+              Joshua Arnao Canessa
+            </Typography>
+            <Typography variant='subtitle1' component='div' textAlign='center'>
+              Ingeniero Industrial
+            </Typography>
+          </Box>
+          
           <Typography component='div' textAlign='justify'>
             Diseñador de productos digitales con experiencia en metodología
             Agile, Design Thinking y CPS.{' '}
