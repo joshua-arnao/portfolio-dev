@@ -39,9 +39,8 @@ export const MyTimeLine = ({ experience, currentTheme }) => {
           gap="4px"
           sx={{
             color: type === "study" ? "#F3B" : '#88CCCA',
-            "&:hover": {
-              color: "#FF82D5",
-            },
+            "&:hover":  
+              type === 'study' ? { color: "#FF82D5"}:{},
           }}
         >
           {
