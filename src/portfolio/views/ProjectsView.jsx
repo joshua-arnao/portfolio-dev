@@ -16,7 +16,7 @@ const projects = [
     projectId: 2,
     title: "Proceso de Créditos | Web",
     description:
-      "Este proyecto buscaba desarrollar una plataforma intermediaria entre clientes y bancos en Panamá, simplificando...",
+      "Este proyecto buscaba desarrollar una plataforma intermediaria entre clientes y bancos en Panamá...",
     imgCard: "/assets/photos/HomeBankiao.png",
     tools: ["React", "Marvel", "Figma"],
   },
@@ -24,7 +24,7 @@ const projects = [
     projectId: 3,
     title: "Figma Tracking Analytics | Widget",
     description:
-      "Contribuir a la comunidad de Figma al crear un widget que facilita la documentación y el seguimiento de etiquetas para Google Analitycs...",
+      "Contribuir a la comunidad de Figma al crear un widget que facilita la documentación y el seguimiento de etiquetas...",
     imgCard: "/assets/photos/PreviewWidget.png",
     tools: ["TypeScript", "Figma", "Google Analytics"],
   },

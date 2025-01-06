@@ -187,7 +187,7 @@ export const HomeView = ({ currentTheme }) => {
           }}
         >
           {experiences.map((experience, index) => (
-            <MyTimeLine experience={experience} key={index} />
+            <MyTimeLine experience={experience} key={index} currentTheme={currentTheme} />
           ))}
         </Timeline>
       </Box>
@@ -211,7 +211,7 @@ export const HomeView = ({ currentTheme }) => {
             target='_blank'
             rel='noopener'
           >
-            <img style={{height:'18px', width:'18px', color:'#FFF'}} src='/public/assets/photos/figma-logo.svg' />
+            <img style={{height:'18px', width:'18px', color:'#FFF'}} src='/assets/photos/figma-logo.svg' />
           </Link>
 
 

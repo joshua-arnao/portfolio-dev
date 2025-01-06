@@ -10,7 +10,7 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import LinkIcon from "@mui/icons-material/Link";
 
-export const MyTimeLine = ({ experience }) => {
+export const MyTimeLine = ({ experience, currentTheme }) => {
   const { type, year, title, link } = experience;
 
   return (
@@ -21,7 +21,7 @@ export const MyTimeLine = ({ experience }) => {
           sx={
             type === "work"
               ? { background: "#88CCCA" }
-              : { background: "" }
+              : { background: "#F3B" }
           }
         >
           {type === "work" ? <BusinessCenterIcon /> : <AutoStoriesIcon />}
@@ -40,7 +40,7 @@ export const MyTimeLine = ({ experience }) => {
           sx={{
             color: type === "study" ? "#F3B" : '#88CCCA',
             "&:hover": {
-              color: "rgb(136, 204, 202)",
+              color: "#FF82D5",
             },
           }}
         >
