@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 // https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {
-    include: ['@emotion/react', '@emotion/styled', '@mui/material/Tooltip']
+    include: ['@emotion/react', '@emotion/styled', '@mui/material/Tooltip', '@mui/material/Unstable_Grid2']
   },
   plugins: [
     react({
@@ -12,7 +12,7 @@ export default defineConfig({
       babel: {
         plugins: ['@emotion/babel-plugin']
       }
-    })
+    }),
   ]
   // plugins: [react()],
 });

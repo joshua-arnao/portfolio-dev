@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
-import Typography from '@mui/material/Typography';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, set } from 'firebase/database';
-import { Container } from '@mui/material';
-import { useIsSmallScreen } from '/src/hook/useSmallScreen';
+import { useState, useEffect } from "react";
+import Typography from "@mui/material/Typography";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, get, set } from "firebase/database";
+import { Container, Link } from "@mui/material";
+import { useIsSmallScreen } from "/src/hook/useSmallScreen";
+
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY,
@@ -14,7 +16,7 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env
     .VITE_REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_REACT_APP_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_REACT_APP_FIREBASE_MEASUREMENT_ID
+  measurementId: import.meta.env.VITE_REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 export const Countdown = ({ currentTheme }) => {
@@ -24,20 +26,20 @@ export const Countdown = ({ currentTheme }) => {
   useEffect(() => {
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
-    const countdownRef = ref(database, 'countdown');
+    const countdownRef = ref(database, "countdown");
 
-    const targetDate = new Date('2024-12-31T23:59:59'); // Fecha límite fija
+    const targetDate = new Date("2024-12-31T23:59:59"); // Fecha límite fija
 
     const retrieveCountdown = async () => {
       try {
         const snapshot = await get(countdownRef);
         const countdownData = snapshot.val();
         if (countdownData === null) {
-          console.log('No hay datos de contador en Firebase');
+          console.log("No hay datos de contador en Firebase");
           set(countdownRef, { targetDate: targetDate.toISOString() });
         }
       } catch (error) {
-        console.error('Error al recuperar el contador:', error);
+        console.error("Error al recuperar el contador:", error);
       }
     };
 
@@ -70,25 +72,45 @@ export const Countdown = ({ currentTheme }) => {
   const { background } = currentTheme.palette;
 
   return (
-    <Container
-      style={{
-        backdropFilter: 'blur(10px)',
-        backgroundColor: background.countdown,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: isSmallScreen ? '8px 16px' : '12px 32px',
-        borderRadius: '8px'
+    <Link
+      sx={{
+        color: "rgb(133, 142, 150)",
+        textDecoration: "none",
+        width: "100%",
+        "&:hover":{
+          color:'#F3B'
+        }
       }}
+      href="https://portfolio-documents.s3.us-east-1.amazonaws.com/Joshua/CV-Joshua-Arnao-Canessa.pdf"
+      target="_blank"
+      rel="noopener"
     >
-      {countdown ? (
-        <Typography variant='body1' textAlign='center'>
-          {countdown.days}d:{countdown.hours}h:{countdown.minutes}m y 2 cursos
-          para graduarme como Ing. Industrial
-        </Typography>
-      ) : (
-        <Typography variant='body1'>Cargando datos...</Typography>
-      )}
-    </Container>
+      <Container
+        style={{
+          backdropFilter: "blur(10px)",
+          backgroundColor: background.countdown,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: isSmallScreen ? "8px 16px" : "12px 32px",
+          borderRadius: "8px",
+          width: "100%",
+        }}
+      >
+        {/* {countdown ? (
+          <Typography variant='body1' textAlign='center'>
+            {countdown.days}d:{countdown.hours}h:{countdown.minutes}m y 2 cursos
+            para graduarme como Ing. Industrial
+          </Typography>
+        ) : (
+          <Typography variant='body1'>Cargando datos...</Typography>
+        )} */}
+
+        <Typography>Descargar CV</Typography>
+
+        <FileDownloadIcon />
+      </Container>
+    </Link>
   );
 };

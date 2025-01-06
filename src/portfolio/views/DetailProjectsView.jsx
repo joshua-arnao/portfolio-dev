@@ -16,10 +16,12 @@ import CheckIcon from '@mui/icons-material/Check';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { darkTheme } from '../../theme/darkTheme';
 import { ChipSkill } from '../components/ChipSkill';
+import LinkIcon from '@mui/icons-material/Link'
 
 const projects = [
   {
     projectId: 1,
+    link: [],
     title: 'Rediseño rentadora de auto | App',
     tools: ['React', 'Node.js', 'Notion'],
     description:
@@ -88,6 +90,7 @@ const projects = [
   },
   {
     projectId: 2,
+    link: [],
     title: 'Proceso de Créditos | Web',
     tools: ['React', 'Marvel', 'Figma', 'Looker Studio'],
     description:
@@ -146,6 +149,70 @@ const projects = [
       ],
       images: []
     }
+  },
+  {
+    projectId: 3,
+    link: ['https://www.figma.com/community/widget/1365813831823501864'],
+    title: 'Figma Tracking Analytics | Widget',
+    tools: ['TypeScript', 'Figma', 'Google Analytics'],
+    description:
+      'Como Product Designer con un background Fullstack, decidí contribuir a la comunidad de Figma al crear un widget que facilita la documentación y el seguimiento de etiquetas para Google Analitycs en los diseños trabajados en figma. Este widget busca mejorar la colaboración entre equipos de diseño y desarrollo, dejando claro dónde se deben asignar las etiquetas para Google Analytics ya que la medición precisa de datos es crucial para tomar decisiones informadas, y este widget simplifica el proceso de documentación.',
+    rol: [
+      'Identifiqué la necesidad de una herramienta que conectara de manera eficiente a diseñadores y desarrolladores en la asignación de etiquetas.',
+      'Diseñé y desarrollé el widget en Figma utilizando TypeScript, garantizando una experiencia fluida para los usuarios',
+      'Iteré el diseño del widget basándome en el feedback de usuarios de la comunidad de Figma.',
+    ],
+    problem: {
+      description:
+        'Los equipos de UX y desarrollo frecuentemente enfrentan desafíos en la documentación y ubicación precisa de etiquetas para herramientas como Google Analytics, lo que afecta la calidad del análisis de datos. Este widget soluciona el problema al:',
+      pareto: [
+        'Proveer una interfaz clara y accesible para asignar etiquetas directamente en los diseños.',
+        'Establecer un puente entre diseñadores y desarrolladores, mejorando la comunicación y evitando malentendidos en la implementación.',
+        'Facilitar la medición precisa de datos para decisiones estratégicas más efectivas.',
+      ]
+    },
+    understanding: {
+      description:
+        'Los diseñadores suelen necesitar asignar etiquetas para rastrear interacciones clave en sus prototipos. Este widget permite:',
+      list: [
+        'Identificar de forma visual dónde deben ubicarse las etiquetas en los diseños.',
+        'Documentar estas etiquetas para un fácil acceso y comprensión por parte del equipo de desarrollo.',
+      ],
+      images: [
+        '/assets/photos/Backgound&Problem.png',
+      ]
+    },
+    breacking: {
+      description:
+        '',
+      list: [
+        'Realicé entrevistas con diseñadores y desarrolladores para identificar los puntos de fricción en la documentación de etiquetas.',
+        'Analicé el flujo de trabajo en Figma para asegurar que la herramienta fuera intuitiva y no interfiriera en la creatividad del diseño.',
+        'Diseñé iterativamente el widget, probándolo con miembros de la comunidad y ajustando según el feedback recibido.',
+      ],
+      images: [
+        '/assets/photos/InquiriesProblem.png',
+        '/assets/photos/SoluctionsProblem.png'
+      ]
+    },
+    overall: {
+      description: '',
+      list: [
+        'La herramienta permitió un proceso más organizado y eficiente para documentar y asignar etiquetas, reduciendo errores en la implementación.',
+        'Se tiene mas de 1400 usuarios usando diariamente el widget.',
+        'En mi equipo de trabajo se redujo en mas de un 90% las repreguntas o malos entendidos en las asignaciones de las etiquetas'
+      ],
+      images: ['/assets/photos/ABTesting.png']
+    },
+    conclusions: {
+      description: '',
+      list: [
+        'Aprendí a combinar habilidades de diseño y desarrollo para crear herramientas útiles y bien recibidas por la comunidad.',
+        'Fortalecí mi capacidad de abordar problemas de comunicación entre equipos multidisciplinarios, aportando soluciones tangibles.',
+        'Entendí la importancia de las herramientas visuales para mejorar la colaboración en proyectos de medición y análisis de datos.'
+      ],
+      images: []
+    }
   }
 ];
 
@@ -196,6 +263,19 @@ export const DetailProjectsView = ({ currentTheme }) => {
           <ChipSkill key={index} label={tool} currentTheme={currentTheme} />
         ))}
       </Stack>
+
+      <Box>
+        {project.link.map((link, index)=>(
+          <Box key={index} style={{display:'flex', alignItems:'center', gap:'8px'}}>
+            <div style={{display:'flex', alignItems: 'center', height: '22px', padding:'1px 8px', borderRadius: '6px', background: 'rgba(154, 230, 180, 0.16)'}}>
+              <p style={{fontSize:'12px', color: '#9AE6B4', fontFamily: 'Inter', lineHeight: '20px'}}>Link</p>
+            </div>
+            <Linked  href={link} target='_blank' color={'#FF33BB'} fontSize='14px'>Clic para ver el Proyecto <LinkIcon color={'#FF33BB'} fontSize='14px'/></Linked> 
+          </Box>
+          
+        ))}
+      </Box>
+
 
       <Box width='100%' display='flex' flexDirection='column' gap='16px'>
         <Typography variant='subtitle1' component='div' width='100%'>

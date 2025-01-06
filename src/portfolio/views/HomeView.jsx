@@ -18,19 +18,26 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const skills = [
   'Product Designer',
-  'Figma',
+  'Figma Avanzado',
   'Adobe XD',
+  'UX/UI Designer',
+  'Excel Avanzado',
+  'AppScript',
+  'Looker Studio',
+  'Análisis de datos',
   'Notion',
   'Frontend',
   'React JS',
-  'Analytics',
-  'Excel',
+  'HTML',
+  'CSS',
+  'Bizagi',  
+  'Google Analytics',
   'IA Generativa',
-  'Gestión de proyectos'
+  'Gestión de proyectos',
 ];
 
 const experiences = [
-  { year: 2016, type: 'work', title: 'Analista de Mejora de proceso' },
+  { year: 2016, type: 'work', title: 'Analista de Mejora de procesos' },
   { year: 2018, type: 'work', title: 'Analista Six Sigma' },
   { year: 2019, type: 'study', title: 'Curso UX/UI' },
   { year: 2020, type: 'work', title: 'Analista UX/UI' },
@@ -44,7 +51,7 @@ const experiences = [
     year: 2022,
     type: 'study',
     title: 'Desarrollo Web Fullstack',
-    link: 'www.google.com'
+    link: 'https://portfolio-documents.s3.us-east-1.amazonaws.com/Joshua/certificado-tecsup.pdf'
   },
   { year: 2022, type: 'work', title: 'Product Designer' },
   {
@@ -52,6 +59,12 @@ const experiences = [
     type: 'study',
     title: 'Gestion de Proyectos en base al PMBOK',
     link: 'https://drive.google.com/file/d/10RfRqYp9Ve7Hbp0UrMvU4ohIz5YOcK9f/view'
+  },
+  {
+    year: 2024,
+    type: 'study',
+    title: 'Scrum Fundamentals Certified',
+    link: 'https://c46e136a583f7e334124-ac22991740ab4ff17e21daf2ed577041.ssl.cf1.rackcdn.com/Certificate/ScrumFundamentalsCertified-JoshuaArnao-1053623.pdf'
   }
 ];
 
@@ -178,7 +191,7 @@ export const HomeView = ({ currentTheme }) => {
           Links
         </Typography>
 
-        <Stack direction='row' spacing={1}>
+        <Stack direction='row' spacing={1}  alignItems='center'>
           <Link
             href='https://pe.linkedin.com/in/joshua-arnao-canessa-832090213'
             target='_blank'
@@ -186,6 +199,16 @@ export const HomeView = ({ currentTheme }) => {
           >
             <LinkedInIcon color={'secondary'} />
           </Link>
+
+          <Link
+            href='https://www.figma.com/@joshuaarnao'
+            target='_blank'
+            rel='noopener'
+          >
+            <img style={{height:'18px', width:'18px', color:'#FFF'}} src='/public/assets/photos/figma-logo.svg' />
+          </Link>
+
+
         </Stack>
       </Box>
     </Container>
