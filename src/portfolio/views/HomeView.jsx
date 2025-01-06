@@ -45,21 +45,13 @@ const experiences = [
     year: 2021,
     type: 'study',
     title: 'Especialización UI',
-<<<<<<< HEAD
-    link: 'https://medu-certifications.medu.academy/Jr8JsIguhdH61inKXABL'
-=======
     link: 'https://portfolio-documents.s3.us-east-1.amazonaws.com/Joshua/certificado-medu.pdf'
->>>>>>> ea2a3105eec630bfa97179d701302cea523adfaf
   },
   {
     year: 2022,
     type: 'study',
     title: 'Desarrollo Web Fullstack',
-<<<<<<< HEAD
-    link: 'https://academico-cloud.tecsup.edu.pe/pcc/#/home/certificado?c=583348&n=COD%2FCPE%2F22%2F106&t=E'
-=======
     link: 'https://portfolio-documents.s3.us-east-1.amazonaws.com/Joshua/certificado-tecsup.pdf'
->>>>>>> ea2a3105eec630bfa97179d701302cea523adfaf
   },
   { year: 2022, type: 'work', title: 'Product Designer' },
   {
