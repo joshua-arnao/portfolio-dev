@@ -20,8 +20,8 @@ export const MyTimeLine = ({ experience }) => {
         <TimelineDot
           sx={
             type === "work"
-              ? { background: "#858E96" }
-              : { background: "#88CCCA" }
+              ? { background: "#88CCCA" }
+              : { background: "" }
           }
         >
           {type === "work" ? <BusinessCenterIcon /> : <AutoStoriesIcon />}
