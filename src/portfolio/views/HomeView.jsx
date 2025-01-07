@@ -17,7 +17,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const skills = [
-  'Product Designer',
+  'Metodologías Ágiles',
+  'Adaptabilidad',
   'Figma Avanzado',
   'Adobe XD',
   'UX/UI Designer',
@@ -30,10 +31,13 @@ const skills = [
   'React JS',
   'HTML',
   'CSS',
+  'Comunicación efectiva',
   'Bizagi',  
   'Google Analytics',
   'IA Generativa',
   'Gestión de proyectos',
+  'Optimización de procesos',
+  'Pensamiento crítico',
 ];
 
 const experiences = [
