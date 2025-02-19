@@ -222,7 +222,7 @@ export const HomeView = ({ currentTheme }) => {
             rel='noopener'
           >
             <img
-              style={{ height: '18px', width: '18px', color: '#FFF' }}
+              style={{ height: '18px', width: '18px', color: '#FFFFFF' }}
               src='/assets/photos/figma-logo.svg'
             />
           </Link>
