@@ -115,7 +115,7 @@ export const HomeView = ({ currentTheme }) => {
           </Box>
 
           <Typography component='div' textAlign='justify'>
-            Apasionado por el desarrollo de aplicaciones web escalables y
+            adasd Apasionado por el desarrollo de aplicaciones web escalables y
             optimizadas, con experiencia en tecnologías frontend y backend,
             metodologías ágiles y diseño centrado en el usuario.
           </Typography>
