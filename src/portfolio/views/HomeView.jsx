@@ -174,7 +174,11 @@ export const HomeView = ({ currentTheme }) => {
 
         <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
           {skills.map((skill, index) => (
+<<<<<<< HEAD
             <ChipSkill key={index} label={skill} currentTheme={currentTheme}/>
+=======
+            <ChipSkill key={index} label={skill} currentTheme={currentTheme} />
+>>>>>>> f458c39152d0edf422ef7e34ed1bda6959b24ba0
           ))}
         </Stack>
       </Box>
