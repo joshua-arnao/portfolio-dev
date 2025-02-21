@@ -43,8 +43,9 @@ export const lightTheme = createTheme({
       other: '#333'
     },
     background: {
-      primary: '#88CCCA',
+      primary: '#73AAA8',
       secondary: { main: '#333', light: '#FBD38D' },
+      other:{primary:'#C71585', secundary:'#FF3CAC'},
       nav: 'rgba(255, 255, 255, 0.35)',
       countdown: 'rgba(0, 0, 0, 0.16)'
     }

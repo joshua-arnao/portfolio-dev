@@ -45,6 +45,7 @@ export const darkTheme = createTheme({
     background: {
       primary: '#88CCCA',
       secondary: { main: '#FBD38D', light: '#333' },
+      other: {primary:'#FF3CAC', secundary:'#C71585'},
       nav: 'rgba(37, 37, 37, 0.50)',
       countdown: 'rgba(255, 255, 255, 0.16)'
     },
