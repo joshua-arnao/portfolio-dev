@@ -1,7 +1,7 @@
-import { Chip } from '@mui/material';
+import { Chip } from "@mui/material";
 
 export const ChipSkill = ({ label, currentTheme }) => {
-  const { primary, text } = currentTheme.palette;
+  const { primary, text, background } = currentTheme.palette;
   return (
     <Chip
       label={label}
