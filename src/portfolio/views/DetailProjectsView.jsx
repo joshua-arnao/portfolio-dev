@@ -50,14 +50,19 @@ export const DetailProjectsView = ({ currentTheme }) => {
     fetchProject();
   }, [projectId]);
 
-  const { secondary } = currentTheme.palette
+  const { primary, secundary, background } = currentTheme.palette;
 
   if (loading)
     return (
       <Box
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap:"16px" }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "16px",
+        }}
       >
-        <HashLoader size={40} color={secondary.main}/>
+        <HashLoader size={40} color={secundary.main} />
         <Typography>Cargando...</Typography>
       </Box>
     );
@@ -66,7 +71,7 @@ export const DetailProjectsView = ({ currentTheme }) => {
     return <Typography color="error">{error}</Typography>;
   }
 
-  const { primary, background } = currentTheme.palette;
+  
   const {
     tools,
     title,
@@ -94,6 +99,14 @@ export const DetailProjectsView = ({ currentTheme }) => {
     </Typography>,
   ];
 
+  const getLinkText = (link) => {
+    if (link.includes("github")) {
+      return "Ver el reposotorio";
+    }
+
+    return "Ver el proyecto";
+  };
+
   return (
     <Container
       style={{
@@ -120,7 +133,10 @@ export const DetailProjectsView = ({ currentTheme }) => {
         ))}
       </Stack>
 
-      <Box>
+      <Box
+        style={{ display: "flex", flexDirection: "column", gap: "8px" }}
+        background="#000"
+      >
         {link.map((link, index) => (
           <Box
             key={index}
@@ -150,11 +166,17 @@ export const DetailProjectsView = ({ currentTheme }) => {
             <Linked
               href={link}
               target="_blank"
-              color={"#FF33BB"}
+              color={background.other.primary}
               fontSize="14px"
+              sx={{
+                "&:hover": {
+                  color: background.other.secundary,
+                  textDecoration: "underline",
+                },
+              }}
             >
-              Clic para ver el Proyecto{" "}
-              <LinkIcon color={"#FF33BB"} fontSize="14px" />
+              {getLinkText(link)}{" "}
+              <LinkIcon color={background.other.primary} fontSize="14px" />
             </Linked>
           </Box>
         ))}

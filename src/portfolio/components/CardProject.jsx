@@ -2,7 +2,6 @@ import { Box, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useState } from "react";
 import { ChipSkill } from "./ChipSkill";
-import { darkTheme } from "../../theme/darkTheme";
 
 export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
   const { title, description, imgCard, tools } = project;
@@ -16,6 +15,8 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
     setIsHover(false);
   };
 
+  const { secundary, background } = currentTheme.palette;
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -23,29 +24,22 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
         rowGap={1}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        color={secundary.main}
         style={
           !isHover
             ? {
-                border:
-                  currentTheme === darkTheme
-                    ? "1px solid #fff"
-                    : "1px solid #333",
+                border:`2px solid ${secundary.main}`,
                 padding: "20px 24px",
                 borderRadius: "20px",
                 transition: "background-color 0.3s ease",
+                textDecoration: "none"
               }
             : {
-                border:
-                  currentTheme === darkTheme
-                    ? "1px solid #fff"
-                    : "1px solid #333",
+                border: `2px solid ${background.primary}`,
                 padding: "20px 24px",
                 borderRadius: "20px",
                 transition: "background-color 0.3s ease",
-                backgroundColor:
-                  currentTheme === darkTheme
-                    ? "rgb(255, 255, 255, 0.05)"
-                    : "rgb(0, 0, 0, 0.05)",
+                backgroundColor: background.hover,
                 cursor: "pointer",
               }
         }
@@ -68,13 +62,14 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
           id="prueba"
           style={{
             padding: isSmallScreen ? "" : "0px 0px 0px 16px",
+            textDecoration: "none"
           }}
         >
           <Box>
-            <Typography variant="h6" component="div" color="secondary">
+            <Typography variant="h6" component="div" color="secundary">
               {title}
             </Typography>
-            <Typography variant="body2" component="div" color="secondary">
+            <Typography variant="body2" component="div" color="secundary">
               {description.length > 100
                 ? `${description.slice(0, 100)}...`
                 : description}

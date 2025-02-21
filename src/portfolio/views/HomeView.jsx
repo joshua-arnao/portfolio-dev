@@ -48,12 +48,12 @@ const skills = [
 
 export const HomeView = ({ currentTheme }) => {
   const { experiences, loading } = useExperiences();
-  const { text, secondary } = currentTheme.palette;
+  const { text, secundary } = currentTheme.palette;
 
   if (loading)
     return (
       <Box sx={{ display: "flex", flexDirection:'column', alignItems: "center", gap:"16px" }}>
-        <HashLoader size={40} color={secondary.main}/>
+        <HashLoader size={40} color={secundary.main}/>
         <Typography>Cargando...</Typography>
       </Box>
     );
@@ -193,7 +193,7 @@ export const HomeView = ({ currentTheme }) => {
             target="_blank"
             rel="noopener"
           >
-            <GitHubIcon color={"secondary"} />
+            <GitHubIcon color={"secundary"} />
           </Link>
 
           <Link
