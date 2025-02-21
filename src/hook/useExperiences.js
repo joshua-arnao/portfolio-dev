@@ -23,5 +23,5 @@ export const useExperiences = () => {
     fetchProjects()
   },[]);
 
-  return{experiences: experiences, loading, error}
+  return{ experiences, loading, error}
 };

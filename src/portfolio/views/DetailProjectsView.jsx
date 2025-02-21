@@ -20,6 +20,7 @@ import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { ChipSkill } from "../components/ChipSkill";
 import LinkIcon from "@mui/icons-material/Link";
 import { darkTheme } from "../../theme";
+import { HashLoader } from "react-spinners";
 
 export const DetailProjectsView = ({ currentTheme }) => {
   const { projectId } = useParams();
@@ -49,10 +50,17 @@ export const DetailProjectsView = ({ currentTheme }) => {
     fetchProject();
   }, [projectId]);
 
-  // Verificación mientras carga o hay errores
-  if (loading) {
-    return <Typography>Cargando...</Typography>;
-  }
+  const { secondary } = currentTheme.palette
+
+  if (loading)
+    return (
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap:"16px" }}
+      >
+        <HashLoader size={40} color={secondary.main}/>
+        <Typography>Cargando...</Typography>
+      </Box>
+    );
 
   if (error) {
     return <Typography color="error">{error}</Typography>;
@@ -74,7 +82,12 @@ export const DetailProjectsView = ({ currentTheme }) => {
 
   const breadcrumbs = [
     <Link to="/projects" key="1" style={{ textDecoration: "none" }}>
-      <Linked underline="hover" color={currentTheme === darkTheme ? '#fff':'#000'}>Projects</Linked>
+      <Linked
+        underline="hover"
+        color={currentTheme === darkTheme ? "#fff" : "#000"}
+      >
+        Projects
+      </Linked>
     </Link>,
     <Typography key="2" color={background.primary}>
       {title}
