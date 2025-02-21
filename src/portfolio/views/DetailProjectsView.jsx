@@ -58,7 +58,7 @@ export const DetailProjectsView = ({ currentTheme }) => {
     return <Typography color="error">{error}</Typography>;
   }
 
-  const { primary, secundary, background } = currentTheme.palette;
+  const { primary, background } = currentTheme.palette;
   const {
     tools,
     title,
