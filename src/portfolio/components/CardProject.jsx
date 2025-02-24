@@ -28,11 +28,11 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
         style={
           !isHover
             ? {
-                border:`2px solid ${secundary.main}`,
+                border: `2px solid ${secundary.main}`,
                 padding: "20px 24px",
                 borderRadius: "20px",
                 transition: "background-color 0.3s ease",
-                textDecoration: "none"
+                textDecoration: "none",
               }
             : {
                 border: `2px solid ${background.primary}`,
@@ -62,7 +62,7 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
           id="prueba"
           style={{
             padding: isSmallScreen ? "" : "0px 0px 0px 16px",
-            textDecoration: "none"
+            textDecoration: "none",
           }}
         >
           <Box>
@@ -77,9 +77,12 @@ export const CardProject = ({ project, isSmallScreen, currentTheme }) => {
           </Box>
 
           <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-            {tools.map((tool, index) => (
+            {tools.slice(0, 3).map((tool, index) => (
               <ChipSkill key={index} label={tool} currentTheme={currentTheme} />
             ))}
+            {tools.length > 3 && (
+              <ChipSkill key="more" label="..." currentTheme={currentTheme} />
+            )}
           </Stack>
         </Grid>
       </Grid>
