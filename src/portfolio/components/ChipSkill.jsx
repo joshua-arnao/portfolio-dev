@@ -24,14 +24,14 @@ export const ChipSkill = ({ label, currentTheme }) => {
         backgroundColor: backgroundColor || getRandomColor(),
         color: textColor,
         transition: "all 0.3s ease-in-out", // Transición suave
-        cursor: "pointer",
+        cursor: "default",
         boxShadow: "0 2px 5px rgba(0, 0, 0, 0.15)", // Sombra inicial
       }}
       sx={{
         "&:hover": {
           backgroundColor: getRandomColor(), // Nuevo color en hover
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)", // Sombra más intensa al hacer hover
-          transform: "scale(1.05)", // Ligero agrandamiento
+          transform: "scale(1.02)", // Ligero agrandamiento
         },
       }}
     />

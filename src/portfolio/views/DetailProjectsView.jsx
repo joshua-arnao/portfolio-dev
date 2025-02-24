@@ -15,7 +15,6 @@ import { Link as Linked } from "@mui/material";
 import { getProjectById } from "../../api/projectsApi";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import CheckIcon from "@mui/icons-material/Check";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 // import { darkTheme } from '../../theme/darkTheme';
 import { ChipSkill } from "../components/ChipSkill";
 import LinkIcon from "@mui/icons-material/Link";
@@ -78,11 +77,6 @@ export const DetailProjectsView = ({ currentTheme }) => {
     description,
     link,
     rol,
-    problem,
-    understanding,
-    breacking,
-    overall,
-    conclusions,
   } = project;
 
   const breadcrumbs = [
