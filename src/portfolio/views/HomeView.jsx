@@ -52,8 +52,15 @@ export const HomeView = ({ currentTheme }) => {
 
   if (loading)
     return (
-      <Box sx={{ display: "flex", flexDirection:'column', alignItems: "center", gap:"16px" }}>
-        <HashLoader size={40} color={secundary.main}/>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "16px",
+        }}
+      >
+        <HashLoader size={40} color={secundary.main} />
         <Typography>Cargando...</Typography>
       </Box>
     );
@@ -94,11 +101,15 @@ export const HomeView = ({ currentTheme }) => {
             </Typography>
           </Box>
 
-          <Typography component="div" textAlign="justify">
-            Apasionado por el desarrollo de aplicaciones web escalables y
-            optimizadas, con experiencia en tecnologías frontend y backend,
-            metodologías ágiles y diseño centrado en el usuario.
+          <Typography component="div" textAlign="justify" sx={{ fontStyle: 'italic' }}>
+            “Diseño con intención. Desarrollo con propósito.”
           </Typography>
+          <Typography component="div" textAlign="justify">
+            Soy Joshua Arnao, un Product Designer con mentalidad técnica y
+            Frontend Developer con enfoque en la experiencia de usuario. Diseño
+            interfaces hermosas y también las construyo.
+          </Typography>
+
           <Stack
             direction="row"
             flex
