@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getExperiences } from "../api/experiencesApi";
+import { useEffect, useState } from 'react';
+import { getExperiences } from '../api/experiencesApi';
 
 export const useExperiences = () => {
   const [experiences, setExperiences] = useState([]);
@@ -7,21 +7,21 @@ export const useExperiences = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchExperiences = async () => {
       setLoading(true);
 
       try {
         const data = await getExperiences();
         setExperiences(data);
       } catch (error) {
-        setError(error.mesage)
+        setError(error.mesage);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     };
 
-    fetchProjects()
-  },[]);
+    fetchExperiences();
+  }, []);
 
-  return{ experiences, loading, error}
+  return { experiences, loading, error };
 };

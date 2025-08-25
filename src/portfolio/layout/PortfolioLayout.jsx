@@ -16,7 +16,7 @@ export const PortfolioLayout = ({ toggleTheme, currentTheme }) => {
         component='main'
         style={{
           margin: '100px 0px ',
-          width: isSmallScreen ? '360px' : '533px' // Ajusta el ancho según el tamaño de la pantalla
+          width: isSmallScreen ? '360px' : '533px', // Ajusta el ancho según el tamaño de la pantalla
         }}
       >
         {/* {children} */}

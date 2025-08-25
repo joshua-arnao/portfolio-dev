@@ -6,61 +6,35 @@ import {
   Stack,
   Typography,
   Link,
-} from "@mui/material";
-import { useExperiences } from "../../hook/useExperiences";
-import { Timeline } from "@mui/lab";
-import { timelineItemClasses } from "@mui/lab/TimelineItem";
-import { MyTimeLine, ChipSkill } from "../components/index";
+} from '@mui/material';
+import { Timeline } from '@mui/lab';
+import { timelineItemClasses } from '@mui/lab/TimelineItem';
+import { MyTimeLine, ChipSkill, SkillTag } from '../components/index';
 
-import PlaceIcon from "@mui/icons-material/Place";
-import CakeIcon from "@mui/icons-material/Cake";
-import EmailIcon from "@mui/icons-material/Email";
-// import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { HashLoader } from "react-spinners";
-
-const skills = [
-  "React.js",
-  "Next.js",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Node.js",
-  "Express.js",
-  "API REST",
-  "MongoDB",
-  "PostgreSQL",
-  "Git",
-  "GitHub",
-  "Docker",
-  "CI/CD",
-
-  "UX/UI Designer",
-  "Figma Avanzado",
-  "Adobe XD",
-  "Metodologías Ágiles",
-
-  "Optimización de procesos",
-  "Pensamiento crítico",
-  "Comunicación Efectiva",
-];
+import PlaceIcon from '@mui/icons-material/Place';
+import CakeIcon from '@mui/icons-material/Cake';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useSkills } from '../../hook/useSkills';
+import { HashLoader } from 'react-spinners';
+import { useExperiences } from '../../hook/useExperiences';
 
 export const HomeView = ({ currentTheme }) => {
-  const { experiences, loading } = useExperiences();
-  const { text, secundary } = currentTheme.palette;
+  const { skills, loading } = useSkills();
+  const { experiences } = useExperiences();
+  const { text, secondary } = currentTheme.palette;
 
   if (loading)
     return (
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "16px",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '16px',
         }}
       >
-        <HashLoader size={40} color={secundary.main} />
+        <HashLoader size={40} color={secondary.main} />
         <Typography>Cargando...</Typography>
       </Box>
     );
@@ -68,110 +42,150 @@ export const HomeView = ({ currentTheme }) => {
   return (
     <Container
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        border: "1px solid",
-        padding: "24px",
-        borderRadius: "20px",
-        gap: "24px",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        border: '1px solid',
+        padding: '24px',
+        borderRadius: '20px',
+        gap: '24px',
       }}
     >
-      <Box display="flex" flexDirection="column" alignItems="center" gap="16px">
+      <Box display='flex' flexDirection='column' alignItems='center' gap='16px'>
         <Avatar
-          alt="Joshua Arnao Canessa"
-          src="/assets/photos/joshua-arnao.png"
+          alt='Joshua Arnao Canessa'
+          src='/assets/photos/joshua-arnao.png'
           sx={{ width: 176, height: 176 }}
-          style={{ border: "4px solid" }}
+          style={{ border: '4px solid' }}
         />
 
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          gap="24px"
-          style={{ width: "100%" }}
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          gap='24px'
+          style={{ width: '100%' }}
         >
           <Box>
-            <Typography variant="h2" component="div" textAlign="center">
+            <Typography variant='h2' component='div' textAlign='center'>
               Joshua Arnao Canessa
             </Typography>
-            <Typography variant="subtitle1" component="div" textAlign="center">
-              Desarrollador Full Stack Jr | UX Engineer
+            <Typography variant='subtitle1' component='div' textAlign='center'>
+              FULL STACK DEVELOPER JR & AI ENTHUSIAST
             </Typography>
           </Box>
 
-          <Typography component="div" textAlign="justify" sx={{ fontStyle: 'italic' }}>
-            “Diseño con intención. Desarrollo con propósito.”
-          </Typography>
-          <Typography component="div" textAlign="justify">
-            Soy Joshua Arnao, un Product Designer con mentalidad técnica y
-            Frontend Developer con enfoque en la experiencia de usuario. Diseño
-            interfaces hermosas y también las construyo.
+          <Typography
+            component='div'
+            textAlign='justify'
+            sx={{ fontStyle: 'italic' }}
+          >
+            “Innovación tecnológica con propósito.”
           </Typography>
 
           <Stack
-            direction="row"
+            direction='row'
             flex
-            justifyContent="flex-start"
-            spacing={0.5}
-            flexWrap="wrap"
-            gap="8px"
-            width="100%"
+            justifyContent='flex-start'
+            // spacing={0.5}
+            flexWrap='wrap'
+            gap='8px'
+            width='100%'
           >
             <Chip
               icon={<EmailIcon />}
-              label="joshua.arnao@icloud.com"
-              style={{ color: text.other, fontSize: "13px" }}
+              label='joshua.arnao@icloud.com'
+              style={{ color: text.other, fontSize: '13px' }}
             />
             <Chip
               icon={<PlaceIcon />}
-              label="Lima, Perú"
-              style={{ color: text.other, fontSize: "13px" }}
+              label='Lima, Perú'
+              style={{ color: text.other, fontSize: '13px' }}
             />
             <Chip
               icon={<CakeIcon />}
-              label="28 de Junio"
-              style={{ color: text.other, fontSize: "13px" }}
+              label='28 de Junio'
+              style={{ color: text.other, fontSize: '13px' }}
             />
           </Stack>
         </Box>
       </Box>
 
-      <Box width="100%" display="flex" flexDirection="column" gap="16px">
-        <Typography variant="subtitle1" component="div">
+      <Box width='100%' display='flex' flexDirection='column' gap='16px'>
+        <Typography variant='subtitle1' component='div'>
           About
         </Typography>
 
-        <Typography component="div" textAlign="justify">
-          Soy un Desarrollador Full Stack con experiencia en Frontend y Backend,
-          capaz de construir soluciones digitales desde la arquitectura hasta la
-          interfaz de usuario. Mi formación en ingeniería industrial y diseño
-          UX/UI me permite desarrollar productos digitales funcionales,
-          intuitivos y optimizados para la experiencia del usuario.
+        <Typography component='div' textAlign='justify'>
+          Soy Desarrollador Full Stack Jr con una sólida base en JavaScript,
+          Java y Python, y un interés creciente en el campo de Inteligencia
+          Artificial. Mi enfoque combina habilidades técnicas y pensamiento
+          estratégico para crear soluciones digitales funcionales, escalables y
+          alineadas a las necesidades del usuario y del negocio.
           <br />
           <br />
-          Manejo tecnologías como React, Node.js, Express y bases de datos
-          SQL/NoSQL para crear aplicaciones eficientes y escalables. Mi enfoque
-          se basa en la mejora continua, aplicando metodologías ágiles y buenas
-          prácticas de desarrollo para entregar software de calidad.
+          Mi formación en Ingeniería Industrial y experiencia en diseño UX/UI me
+          brindan una perspectiva integral: entiendo tanto la experiencia del
+          usuario como la arquitectura técnica que la sostiene.
+          <br />
+          <br />
+          He trabajado en proyectos que abarcan frontend, backend y APIs,
+          aplicando buenas prácticas de programación, metodologías ágiles y
+          entornos colaborativos. Tengo experiencia creando interfaces
+          intuitivas, integraciones con bases de datos SQL/NoSQL, y modelos de
+          IA básicos para optimizar procesos y agregar valor a los productos.
+          <br />
+          <br />
+          Manejo herramientas y tecnologías como React, Django, Spring Boot,
+          REST APIs, Git y entornos cloud, lo que me permite adaptarme a
+          distintas necesidades y participar en todas las fases del desarrollo:
+          desde la idea hasta la implementación y mejora continua.
+          <br />
+          <br />
+          Mi objetivo es seguir aprendiendo y aportar innovación en cada
+          proyecto, combinando desarrollo de software, inteligencia artificial y
+          diseño centrado en el usuario, para impactar positivamente en la
+          sociedad y en los negocios.
         </Typography>
       </Box>
 
-      <Box width="100%" display="flex" flexDirection="column" gap="16px">
-        <Typography variant="subtitle1" component="div" width="100%">
+      <Box width='100%' display='flex' flexDirection='column' gap='16px'>
+        <Typography variant='subtitle1' component='div' width='100%'>
           Skills and Tolls
         </Typography>
 
-        <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+        <Stack
+          direction='row'
+          spacing={1}
+          useFlexGap
+          flexWrap='wrap'
+          justifyContent='center'
+        >
+          {[...new Set(skills.map((skill) => skill.type))].map(
+            (uniqueType, index) => (
+              <SkillTag
+                key={index}
+                uniqueType={uniqueType}
+                currentTheme={currentTheme}
+              />
+            )
+          )}
+        </Stack>
+
+        <Stack direction='row' spacing={1} useFlexGap flexWrap='wrap'>
           {skills.map((skill, index) => (
-            <ChipSkill key={index} label={skill} currentTheme={currentTheme} />
+            <ChipSkill
+              key={index}
+              label={skill.name}
+              currentTheme={currentTheme}
+              colorCategory={skill.type}
+            />
           ))}
         </Stack>
       </Box>
 
-      <Box width="100%" display="flex" flexDirection="column" gap="16px">
-        <Typography variant="subtitle1" component="div" width="100%">
+      <Box width='100%' display='flex' flexDirection='column' gap='16px'>
+        <Typography variant='subtitle1' component='div' width='100%'>
           Experience
         </Typography>
 
@@ -193,28 +207,28 @@ export const HomeView = ({ currentTheme }) => {
         </Timeline>
       </Box>
 
-      <Box width="100%" display="flex" flexDirection="column" gap="16px">
-        <Typography variant="subtitle1" component="div" width="100%">
+      <Box width='100%' display='flex' flexDirection='column' gap='16px'>
+        <Typography variant='subtitle1' component='div' width='100%'>
           Links
         </Typography>
 
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction='row' spacing={1} alignItems='center'>
           <Link
-            href="https://github.com/joshua-arnao"
-            target="_blank"
-            rel="noopener"
+            href='https://pe.linkedin.com/in/joshua-arnao-canessa-832090213'
+            target='_blank'
+            rel='noopener'
           >
-            <GitHubIcon color={"secundary"} />
+            <LinkedInIcon color={'secondary'} />
           </Link>
 
           <Link
-            href="https://www.figma.com/@joshuaarnao"
-            target="_blank"
-            rel="noopener"
+            href='https://www.figma.com/@joshuaarnao'
+            target='_blank'
+            rel='noopener'
           >
             <img
-              style={{ height: "18px", width: "18px", color: "#FFFFFF" }}
-              src="/assets/photos/figma-logo.svg"
+              style={{ height: '18px', width: '18px', color: '#FFF' }}
+              src='/assets/photos/figma-logo.svg'
             />
           </Link>
         </Stack>

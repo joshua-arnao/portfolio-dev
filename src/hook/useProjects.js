@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getProjects } from "../api/projectsApi";
+import { useEffect, useState } from 'react';
+import { getProjects } from '../api/projectsApi';
 
 export const useProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -14,14 +14,14 @@ export const useProjects = () => {
         const data = await getProjects();
         setProjects(data);
       } catch (error) {
-        setError(error.mesage)
+        setError(error.mesage);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     };
 
-    fetchProjects()
-  },[]);
+    fetchProjects();
+  }, []);
 
-  return{projects, loading, error}
+  return { projects, loading, error };
 };

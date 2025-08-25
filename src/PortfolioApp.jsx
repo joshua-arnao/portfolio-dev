@@ -29,7 +29,7 @@ export const PortfolioApp = () => {
         sx={{
           minHeight: '100vh',
           backgroundColor: 'primary.main',
-          color: 'secundary.main'
+          color: 'secondary.main',
         }}
       >
         <PortfolioRoutes
